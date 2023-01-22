@@ -4,7 +4,7 @@ CXX = g++
 ifdef DEBUG
 	COPTS = -g -Wall -Wno-sign-compare -Wno-reorder
 else
-	COPTS = -march=i486 -mcpu=i686 -O6 -ffast-math -funroll-loops
+	COPTS = -O6 -ffast-math -funroll-loops
 endif
 
 CXXOPTS = $(COPTS)
