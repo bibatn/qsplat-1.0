@@ -1,0 +1,19 @@
+CC = cc
+CXX = CC
+
+ifdef DEBUG
+	COPTS = -n32 -mips3 -g
+else
+	COPTS = -n32 -mips3 -Ofast=ip27
+	#COPTS = -64 -mips3 -Ofast=ip27
+endif
+
+CXXOPTS = $(COPTS) -LANG:std -woff 1548
+DEPENDOPTS = -MDupdate Makedepend
+
+INCLUDES = -I/u/smr/xforms/include
+LDOPTS =
+LIBDIR = -L/u/smr/xforms/lib32 -Wl,-rpath -Wl,/u/smr/xforms/lib32
+#LIBDIR = -L/u/smr/xforms/lib64 -Wl,-rpath -Wl,/u/smr/xforms/lib64
+
+LIBS = -lforms -lGL -lGLU -lX11 -lXext -lm

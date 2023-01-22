@@ -1,0 +1,267 @@
+Magic: 13000
+
+Internal Form Definition File
+    (do not change)
+
+Number of forms: 1
+Unit of measure: FL_COORD_PIXEL
+
+=============== FORM ===============
+Name: qsplat_gui
+Width: 540
+Height: 600
+Number of Objects: 11
+
+--------------------
+class: FL_BOX
+type: FRAME_BOX
+box: 0 0 540 600
+boxtype: FL_FRAME_BOX
+colors: FL_COL1 FL_COL1
+alignment: FL_ALIGN_CENTER
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: 
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: 
+callback: 
+argument: 
+
+--------------------
+class: FL_GLCANVAS
+type: NORMAL_CANVAS
+box: 10 40 520 520
+boxtype: FL_FRAME_BOX
+colors: FL_NoColor FL_BLACK
+alignment: FL_ALIGN_CENTER
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: 
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NorthWest FL_SouthEast
+name: theGLCanvas
+callback: 
+argument: 
+
+--------------------
+class: FL_VALSLIDER
+type: HOR_NICE_SLIDER
+box: 390 570 140 20
+boxtype: FL_FRAME_BOX
+colors: FL_COL1 FL_COL1
+alignment: FL_ALIGN_LEFT
+style: FL_NORMAL_STYLE
+size: FL_NORMAL_SIZE
+lcol: FL_BLACK
+label: Frame Rate
+shortcut: 
+resize: FL_RESIZE_X
+gravity: FL_South FL_SouthEast
+name: DesiredRate
+callback: DesiredRateCB
+argument: 0
+	bounds: 1 20
+	precision: 1
+	value: 8
+	increment: 0.5 0.5
+	step: 0.5
+
+--------------------
+class: FL_MENU
+type: PULLDOWN_MENU
+box: 10 10 50 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_CENTER
+style: FL_BOLD_STYLE
+size: FL_NORMAL_SIZE
+lcol: FL_BLACK
+label: File
+shortcut: 
+resize: FL_RESIZE_NONE
+gravity: FL_NorthWest FL_NorthWest
+name: FileMenu
+callback: FileMenuCB
+argument: 0
+  struct: 0
+  content: Open...
+  content: Exit
+
+--------------------
+class: FL_MENU
+type: PULLDOWN_MENU
+box: 60 10 70 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_CENTER
+style: FL_BOLD_STYLE
+size: FL_NORMAL_SIZE
+lcol: FL_BLACK
+label: Options
+shortcut: 
+resize: FL_RESIZE_NONE
+gravity: FL_NorthWest FL_NorthWest
+name: OptionsMenu
+callback: OptionsMenuCB
+argument: 0
+  struct: 0
+  content: Shiny
+  mode: FL_PUP_CHECK
+  content: Backface Cull
+  mode: FL_PUP_CHECK
+  content: Show Light
+  mode: FL_PUP_BOX
+  content: Show Refinement
+  mode: FL_PUP_CHECK
+  content: Auto-spin
+  mode: FL_PUP_CHECK
+
+--------------------
+class: FL_MENU
+type: PULLDOWN_MENU
+box: 200 10 90 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_CENTER
+style: FL_BOLD_STYLE
+size: FL_NORMAL_SIZE
+lcol: FL_BLACK
+label: Commands
+shortcut: 
+resize: FL_RESIZE_NONE
+gravity: FL_NorthWest FL_NorthWest
+name: CommandsMenu
+callback: CommandsMenuCB
+argument: 0
+  struct: 0
+  content: Fullscreen
+  mode: FL_PUP_BOX
+  content: Reset Viewer
+
+--------------------
+class: FL_BUTTON
+type: HIDDEN_BUTTON
+box: 270 570 60 20
+boxtype: FL_NO_BOX
+colors: FL_COL1 FL_COL1
+alignment: FL_ALIGN_CENTER
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: 
+shortcut: bdfqsQ^Q^X\033\040
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: ShortcutButton
+callback: ShortcutCB
+argument: 0
+
+--------------------
+class: FL_MENU
+type: PULLDOWN_MENU
+box: 130 10 70 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_CENTER
+style: FL_BOLD_STYLE
+size: FL_NORMAL_SIZE
+lcol: FL_BLACK
+label: Driver
+shortcut: 
+resize: FL_RESIZE_NONE
+gravity: FL_NorthWest FL_NorthWest
+name: DriverMenu
+callback: DriverMenuCB
+argument: 0
+  struct: 0
+  content: OpenGL - Points
+  mode: FL_PUP_RADIO
+  content: OpenGL - Round Points
+  mode: FL_PUP_RADIO
+  content: OpenGL - Quads
+  mode: FL_PUP_RADIO
+  content: OpenGL - Circles
+  mode: FL_PUP_RADIO
+  content: OpenGL - Ellipses
+  mode: FL_PUP_RADIO
+  content: OpenGL - Small Ellipses
+  mode: FL_PUP_RADIO
+  content: OpenGL - Spheres (slow!)
+  mode: FL_PUP_RADIO
+  content: Software - Z Buffer (GL blit)
+  mode: FL_PUP_RADIO
+  content: Software - Z Buffer
+  mode: FL_PUP_RADIO
+  content: Software - Tiled (GL blit)
+  mode: FL_PUP_RADIO
+  content: Software - Tiled
+  mode: FL_PUP_RADIO
+  content: Software - Optimal (GL blit)
+  mode: FL_PUP_RADIO
+  content: Software - Optimal
+  mode: FL_PUP_RADIO
+
+--------------------
+class: FL_MENU
+type: PULLDOWN_MENU
+box: 290 10 50 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_CENTER
+style: FL_BOLD_STYLE
+size: FL_NORMAL_SIZE
+lcol: FL_BLACK
+label: Help
+shortcut: 
+resize: FL_RESIZE_NONE
+gravity: FL_NorthWest FL_NorthWest
+name: HelpMenu
+callback: HelpMenuCB
+argument: 0
+  struct: 0
+  content: About QSplat
+  content: About this model
+
+--------------------
+class: FL_TEXT
+type: NORMAL_TEXT
+box: 10 570 150 20
+boxtype: FL_FRAME_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: 
+shortcut: 
+resize: FL_RESIZE_X
+gravity: FL_SouthWest FL_South
+name: RateBar
+callback: 
+argument: 0
+
+--------------------
+class: FL_TEXT
+type: NORMAL_TEXT
+box: 160 570 150 20
+boxtype: FL_FRAME_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: 
+shortcut: 
+resize: FL_RESIZE_X
+gravity: FL_South FL_South
+name: StatusBar
+callback: 
+argument: 
+
+==============================
+create_the_forms

@@ -1,0 +1,17 @@
+CC = gcc
+CXX = g++
+
+ifdef DEBUG
+	COPTS = -g -Wall -Wno-sign-compare -Wno-reorder
+else
+	COPTS = -march=i586 -mcpu=i686 -O6 -ffast-math -funroll-loops
+endif
+
+CXXOPTS = $(COPTS)
+DEPENDOPTS = -MMD
+
+INCLUDES =
+LDOPTS =
+LIBDIR =
+
+LIBS = -lopengl32 -lglaux -lglu32 -lgdi32 -lcomctl32 -lcomdlg32

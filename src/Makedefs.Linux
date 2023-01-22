@@ -1,0 +1,17 @@
+CC = gcc
+CXX = g++
+
+ifdef DEBUG
+	COPTS = -g -Wall -Wno-sign-compare -Wno-reorder
+else
+	COPTS = -march=i486 -mcpu=i686 -O6 -ffast-math -funroll-loops
+endif
+
+CXXOPTS = $(COPTS)
+DEPENDOPTS = -MMD
+
+INCLUDES =
+LDOPTS =
+LIBDIR = -L/usr/X11R6/lib
+
+LIBS = -lforms -lGL -lGLU -lX11 -lXext -lm
